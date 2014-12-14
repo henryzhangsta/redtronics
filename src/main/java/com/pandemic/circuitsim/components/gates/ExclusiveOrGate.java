@@ -1,0 +1,36 @@
+package com.pandemic.circuitsim.components.gates;
+
+import com.pandemic.circuitsim.FixedBitSet;
+import com.pandemic.circuitsim.ICircuitPort;
+import com.pandemic.circuitsim.IInput;
+
+import java.util.Set;
+
+public class ExclusiveOrGate extends GateBase
+{
+    protected int width;
+    
+    public ExclusiveOrGate(int inputs, int bits)
+    {
+        super("Exclusive OR Gate", inputs, bits);
+        this.width = bits;
+    }
+    
+    @Override
+    public FixedBitSet resolvePort(ICircuitPort port, int tick, Set<ICircuitPort> seen)
+    {
+        if (port == this.getOutput(0))
+        {
+            FixedBitSet value = new FixedBitSet(width);
+            
+            for (IInput i : this.inputs)
+            {
+                i.resolve(tick, seen);
+                value.xor(i.getValue());
+            }
+            
+            return value;
+        }
+        throw new RuntimeException("Invalid port to resolve.");
+    }
+}

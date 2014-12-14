@@ -1,0 +1,20 @@
+[
+    {
+        "modid": "Redtronics",
+        "name": "Redtronics",
+        "description": "",
+        "version": "0.0.1",
+        "mcverison": "1.7.10",
+        "url": "",
+        "updateUrl": "",
+        "authorList": [
+            "Pandemic"
+        ],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "parent": "",
+        "dependencies": [
+        ]
+    }
+]

@@ -1,0 +1,5 @@
+itemGroup.redtronics:general=Redtronics
+
+item.redtronics:wrench.name=Wrench
+
+tile.redtronics:worktable.name=Worktable
